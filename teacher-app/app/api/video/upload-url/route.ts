@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    const { lessonId, courseId, filename } = await request.json();
+    const { lessonId, courseId } = await request.json();
     if (!lessonId || !courseId) {
         return NextResponse.json({ error: "lessonId and courseId are required" }, { status: 400 });
     }

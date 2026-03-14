@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: "Video not ready" }, { status: 422 });
     }
 
-    const courseId = (lesson.section as { course_id: string })?.course_id;
+    const courseId = ((lesson.section as unknown) as { course_id: string })?.course_id;
 
     // Access check: preview lesson OR enrolled student
     if (!lesson.is_preview) {

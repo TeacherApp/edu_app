@@ -2,7 +2,7 @@ import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { NextRequest, NextResponse } from "next/server";
 
 // ── GET /api/enrollments/my — student's own enrollments ────────
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
     const supabase = await createClient();
 
     const {
